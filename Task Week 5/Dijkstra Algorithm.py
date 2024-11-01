@@ -1,4 +1,3 @@
-# Implementasi Algoritma Dijkstra
 import heapq
 from collections import defaultdict
 
@@ -50,18 +49,37 @@ class DijkstraAlgorithm:
         
         return path, distances[end]
 
-# Membuat instance dari algoritma Dijkstra
-dijkstra = DijkstraAlgorithm()
+# Contoh penggunaan Dijkstra
+def test_dijkstra():
+    dijkstra = DijkstraAlgorithm()
+    # Menambahkan edge ke graph
+    dijkstra.add_edge('A', 'B', 4)
+    dijkstra.add_edge('A', 'C', 2)
+    dijkstra.add_edge('B', 'C', 1)
+    dijkstra.add_edge('B', 'D', 5)
+    dijkstra.add_edge('C', 'D', 8)
+    dijkstra.add_edge('C', 'E', 10)
+    dijkstra.add_edge('D', 'E', 2)
+    
+    # Mencari jalur terpendek
+    start = 'A'
+    end = 'E'
+    path, cost = dijkstra.find_shortest_path(start, end)
+    print(f"\nDijkstra - Jalur terpendek dari {start} ke {end}:")
+    print(f"Jalur: {' -> '.join(path)}")
+    print(f"Total cost: {cost}")
 
-# Menambahkan edges ke graph
+# Menggunakan Dijkstra untuk mencari jalur terpendek dari A ke E
+dijkstra = DijkstraAlgorithm()
 dijkstra.add_edge('A', 'B', 4)
 dijkstra.add_edge('A', 'C', 2)
-dijkstra.add_edge('B', 'C', 5)
-dijkstra.add_edge('B', 'D', 10)
-dijkstra.add_edge('C', 'D', 3)
-dijkstra.add_edge('D', 'E', 4)
-dijkstra.add_edge('C', 'E', 8)
+dijkstra.add_edge('B', 'C', 1)
+dijkstra.add_edge('B', 'D', 5)
+dijkstra.add_edge('C', 'D', 8)
+dijkstra.add_edge('C', 'E', 10)
+dijkstra.add_edge('D', 'E', 2)
 
-# Mencari jalur terpendek dari 'A' ke 'E'
 path, cost = dijkstra.find_shortest_path('A', 'E')
-print(f"Jalur terpendek: {path} dengan biaya: {cost}")
+print(f"\nHasil pencarian jalur terpendek dari A ke E:")
+print(f"Jalur: {' -> '.join(path)}")
+print(f"Total cost: {cost}")
