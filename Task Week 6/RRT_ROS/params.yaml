@@ -1,0 +1,22 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /rrt_tree
+      Name: RRT Tree
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /rrt_path
+      Name: Path
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+  Global Options:
+    Fixed Frame: map
+    Frame Rate: 30
