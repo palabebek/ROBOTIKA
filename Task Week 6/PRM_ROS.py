@@ -183,3 +183,12 @@ if __name__ == '__main__':
        planner.run()
    except rospy.ROSInterruptException:
        pass
+
+<launch>
+    <!-- Start RViz -->
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find prm_planner)/rviz/prm_config.rviz"/>
+    
+    <!-- Start PRM Planner -->
+    <node name="prm_planner" pkg="prm_planner" type="prm_node.py" output="screen"/>
+</launch>
+
