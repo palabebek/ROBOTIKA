@@ -1,0 +1,22 @@
+Visualization Manager:
+  Class: ""
+  Displays:
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /prm_markers
+      Name: PRM Markers
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+    - Class: rviz/Marker
+      Enabled: true
+      Marker Topic: /path_markers
+      Name: Path
+      Namespaces:
+        {}
+      Queue Size: 100
+      Value: true
+  Global Options:
+    Fixed Frame: map
+    Frame Rate: 30
